@@ -1,0 +1,26 @@
+<section class="services" id="services">
+	<div class="heading">
+		<div class="label"><span>02</span><p>Services</p></div>
+		<h2>What I can do for you.</h2>
+	</div>
+	<div class="grid">
+		<article><span class="number">01</span><h3>Brand Strategy</h3><p>Positioning, visual identity, and practical systems that give your brand a clear and consistent voice.</p></article>
+		<article><span class="number">02</span><h3>Web Design</h3><p>Responsive interfaces and thoughtful user journeys shaped around real people and business goals.</p></article>
+		<article><span class="number">03</span><h3>Development</h3><p>Fast, accessible websites built with modern tools and an attention to details that make every interaction feel right.</p></article>
+	</div>
+</section>
+
+<style>
+	.services { padding:100px clamp(24px,7vw,108px); background:#f7f7f2; }
+	.heading { display:grid; grid-template-columns:180px 1fr; align-items:end; margin-bottom:58px; }
+	.label { display:flex; align-items:center; gap:16px; }
+	.label span { color:#a97932;font-size:12px}.label p{margin:0;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+	h2 { margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,5vw,68px);font-weight:500;line-height:1;letter-spacing:-.04em}
+	.grid { display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #cad0ce }
+	article { min-height:300px;padding:32px 38px 28px 0;border-right:1px solid #cad0ce }
+	article + article { padding-left:38px } article:last-child { border-right:0 }
+	.number { color:#a97932;font-size:12px;font-weight:800 }
+	h3 { margin:70px 0 18px;font-family:Georgia,serif;font-size:28px }
+	article p { max-width:300px;margin:0;color:#697176;line-height:1.7 }
+	@media (max-width:700px){.services{padding-block:72px}.heading{grid-template-columns:1fr;gap:30px}.grid{grid-template-columns:1fr}article,article+article{min-height:220px;padding:26px 0;border-right:0;border-bottom:1px solid #cad0ce}h3{margin-top:42px}}
+</style>

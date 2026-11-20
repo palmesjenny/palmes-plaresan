@@ -1,11 +1,312 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/Base.layout.astro';
+import '../scripts/animations.js';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+	<header class="site-header" id="home">
+		<nav class="nav container" aria-label="Main navigation">
+			<a class="brand" href="#home" aria-label="Quick Bites home">
+				<img class="brand-logo" src="/images/quick-bites-logo.png" alt="" />
+			</a>
+
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+				<span></span><span></span>
+				<span class="sr-only">Toggle menu</span>
+			</button>
+
+			<div class="nav-links" id="nav-links">
+				<a href="#menu">Menu</a>
+				<a href="#about">About us</a>
+				<a href="#reviews">Reviews</a>
+				<a href="#contact">Contact</a>
+			</div>
+
+			<button class="cart-button" type="button" aria-controls="cart-panel" aria-expanded="false">
+				<span aria-hidden="true">Bag</span>
+				<span class="cart-count" aria-live="polite">0</span>
+			</button>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="hero-copy container" data-reveal>
+				<p class="eyebrow"><span></span> Made fresh every day</p>
+				<h1>Good food.<br /><em>Fast.</em></h1>
+				<p class="hero-text">Flavor-packed favorites made from fresh ingredients and delivered to your door while they're still hot.</p>
+				<div class="hero-actions">
+					<a class="button button-primary" href="#menu">Order now <span aria-hidden="true">→</span></a>
+					<a class="text-link" href="#about">Discover our story</a>
+				</div>
+				<div class="hero-proof">
+					<div class="avatars" aria-hidden="true">
+						<span>J</span><span>M</span><span>A</span>
+					</div>
+					<p><strong>4.9</strong> from 2,000+ happy eaters</p>
+				</div>
+			</div>
+
+			<div class="hero-visual" aria-label="Fresh bowl of food">
+				<div class="sun"></div>
+				<div class="leaf leaf-one"></div>
+				<div class="leaf leaf-two"></div>
+				<div class="dish">
+					<img src="/images/harvest-bowl.jpg" alt="Fresh Harvest Power Bowl" />
+				</div>
+				<div class="ingredient ingredient-one">FRESH</div>
+				<div class="ingredient ingredient-two">FAST</div>
+			</div>
+		</section>
+
+		<section class="benefits" aria-label="Our benefits" data-reveal>
+			<div class="container benefits-grid">
+				<article><strong>15–25</strong><span>Minute delivery</span></article>
+				<article><strong>100%</strong><span>Fresh ingredients</span></article>
+				<article><strong>40+</strong><span>Daily menu favorites</span></article>
+			</div>
+		</section>
+
+		<section class="menu-section" id="menu" data-reveal>
+			<div class="container">
+				<div class="section-heading">
+					<div>
+						<p class="section-kicker">Popular menu</p>
+						<h2>Crave-worthy favorites</h2>
+					</div>
+					<a class="text-link" href="#full-menu">View full menu</a>
+				</div>
+
+				<div class="menu-grid" id="full-menu">
+					<article class="menu-card" data-reveal>
+						<div class="food-art"><img src="/images/harvest-bowl.jpg" alt="Harvest Power Bowl" /></div>
+						<div class="menu-card-copy">
+							<div><p class="category">Signature bowl</p><h3>Harvest Power Bowl</h3></div>
+							<p class="description">Roasted vegetables, herb rice, avocado, and lemon tahini.</p>
+							<div class="menu-card-footer">
+								<strong>$14.50</strong>
+								<button class="add-button" type="button" data-name="Harvest Power Bowl" data-price="14.50" aria-label="Add Harvest Power Bowl to bag">+</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="menu-card" data-reveal>
+						<div class="food-art"><img src="/images/firehouse-burger.jpg" alt="Firehouse Burger" /></div>
+						<div class="menu-card-copy">
+							<div><p class="category">Stacked favorite</p><h3>Firehouse Burger</h3></div>
+							<p class="description">Smash patty, smoked cheddar, house sauce, and crisp slaw.</p>
+							<div class="menu-card-footer">
+								<strong>$12.90</strong>
+								<button class="add-button" type="button" data-name="Firehouse Burger" data-price="12.90" aria-label="Add Firehouse Burger to bag">+</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="menu-card" data-reveal>
+						<div class="food-art"><img src="/images/tomato-pasta.jpg" alt="Rosy Tomato Pasta" /></div>
+						<div class="menu-card-copy">
+							<div><p class="category">Comfort classic</p><h3>Rosy Tomato Pasta</h3></div>
+							<p class="description">Silky tomato sauce, fresh basil, parmesan, and chili crunch.</p>
+							<div class="menu-card-footer">
+								<strong>$13.75</strong>
+								<button class="add-button" type="button" data-name="Rosy Tomato Pasta" data-price="13.75" aria-label="Add Rosy Tomato Pasta to bag">+</button>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="about-section" id="about" data-reveal>
+			<div class="container about-grid">
+				<div class="about-visual" aria-label="Fresh ingredients being prepared">
+					<div class="counter-card">
+						<span>Fresh daily</span>
+						<strong>Made with care</strong>
+					</div>
+					<div class="plate plate-one"></div>
+					<div class="plate plate-two"></div>
+				</div>
+				<div class="about-copy">
+					<p class="section-kicker">Our kitchen</p>
+					<h2>Fast food can be <em>real food.</em></h2>
+					<p>We started Quick Bites with one simple idea: the food you grab on a busy day should still be made with care.</p>
+					<p>Every meal begins with local ingredients, big flavor, and a kitchen that cooks to order.</p>
+					<a class="text-link" href="#contact">Meet the Quick Bites team</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="reviews-section" id="reviews" data-reveal>
+			<div class="container">
+				<p class="section-kicker">From our customers</p>
+				<blockquote>
+					“Fresh, fast, and genuinely delicious. Quick Bites is my weekday lunch <em>done right.</em>”
+				</blockquote>
+				<div class="reviewer">
+					<span class="review-avatar">JS</span>
+					<p><strong>Jamie S.</strong><br />Verified customer</p>
+					<div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact-section" id="contact" data-reveal>
+			<div class="container contact-grid">
+				<div>
+					<p class="section-kicker">Hungry yet?</p>
+					<h2>Your next favorite meal is minutes away.</h2>
+				</div>
+				<a class="button button-dark" href="#menu">Start an order <span aria-hidden="true">→</span></a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container footer-grid">
+			<a class="brand footer-brand" href="#home">
+				<img class="brand-logo" src="/images/quick-bites-logo.png" alt="Quick Bites" />
+			</a>
+			<p>Fresh food, thoughtfully made.</p>
+			<div class="footer-links">
+				<a href="#menu">Menu</a>
+				<a href="#about">About</a>
+				<a href="mailto:hello@quickbites.com">Email</a>
+			</div>
+			<p class="copyright">© {new Date().getFullYear()} Quick Bites</p>
+		</div>
+	</footer>
+
+	<aside class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-label="Shopping bag" aria-hidden="true">
+		<div class="cart-header">
+			<h2>Your bag</h2>
+			<button class="cart-close" type="button" aria-label="Close shopping bag">×</button>
+		</div>
+		<div class="cart-items">
+			<p class="cart-empty">Your bag is waiting for something delicious.</p>
+		</div>
+		<div class="cart-footer">
+			<div><span>Subtotal</span><strong class="cart-total">$0.00</strong></div>
+			<button class="button button-primary checkout-button" type="button" disabled>Checkout</button>
+			<p class="checkout-status" role="status" aria-live="polite"></p>
+		</div>
+	</aside>
+	<div class="cart-backdrop" aria-hidden="true"></div>
+
+	<script>
+		const menuToggle = document.querySelector('.menu-toggle');
+		const navLinks = document.querySelector('.nav-links');
+		menuToggle?.addEventListener('click', () => {
+			const open = menuToggle.getAttribute('aria-expanded') === 'true';
+			menuToggle.setAttribute('aria-expanded', String(!open));
+			navLinks?.classList.toggle('open', !open);
+		});
+
+		navLinks?.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', () => {
+				menuToggle?.setAttribute('aria-expanded', 'false');
+				navLinks.classList.remove('open');
+			});
+		});
+
+		const cartButton = document.querySelector('.cart-button');
+		const cartPanel = document.querySelector('.cart-panel');
+		const cartBackdrop = document.querySelector('.cart-backdrop');
+		const cartClose = document.querySelector('.cart-close');
+		const cartItems = document.querySelector('.cart-items');
+		const cartCount = document.querySelector('.cart-count');
+		const cartTotal = document.querySelector('.cart-total');
+		const checkoutButton = document.querySelector('.checkout-button');
+		const checkoutStatus = document.querySelector('.checkout-status');
+		const bag = new Map();
+
+		const setCartOpen = (open) => {
+			cartPanel?.classList.toggle('open', open);
+			cartBackdrop?.classList.toggle('open', open);
+			cartPanel?.setAttribute('aria-hidden', String(!open));
+			cartButton?.setAttribute('aria-expanded', String(open));
+			document.body.classList.toggle('cart-open', open);
+			if (open) {
+				window.requestAnimationFrame(() => cartClose?.focus());
+			}
+		};
+
+		cartButton?.addEventListener('click', () => setCartOpen(true));
+		cartClose?.addEventListener('click', () => setCartOpen(false));
+		cartBackdrop?.addEventListener('click', () => setCartOpen(false));
+		checkoutButton?.addEventListener('click', () => {
+			if (!checkoutStatus || bag.size === 0) return;
+			checkoutStatus.textContent = 'Checkout is ready — this demo does not process payments.';
+		});
+
+		const renderCart = () => {
+			if (!cartItems || !cartCount || !cartTotal) return;
+			const entries = [...bag.values()];
+			const count = entries.reduce((sum, item) => sum + item.quantity, 0);
+			const total = entries.reduce((sum, item) => sum + item.price * item.quantity, 0);
+			cartCount.textContent = String(count);
+			cartTotal.textContent = `$${total.toFixed(2)}`;
+			if (checkoutButton instanceof HTMLButtonElement) {
+				checkoutButton.disabled = entries.length === 0;
+			}
+
+			if (!entries.length) {
+				cartItems.innerHTML = '<p class="cart-empty">Your bag is waiting for something delicious.</p>';
+				if (checkoutStatus) checkoutStatus.textContent = '';
+				return;
+			}
+
+			cartItems.innerHTML = entries.map((item) => `
+				<div class="cart-item">
+					<div><strong>${item.name}</strong><span>$${item.price.toFixed(2)}</span></div>
+					<div class="quantity" aria-label="Quantity for ${item.name}">
+						<button type="button" data-action="decrease" data-name="${item.name}" aria-label="Decrease ${item.name} quantity">−</button>
+						<span>${item.quantity}</span>
+						<button type="button" data-action="increase" data-name="${item.name}" aria-label="Increase ${item.name} quantity">+</button>
+					</div>
+				</div>
+			`).join('');
+		};
+
+		document.querySelectorAll('.add-button').forEach((button) => {
+			button.addEventListener('click', () => {
+				const name = button.dataset.name;
+				const price = Number(button.dataset.price);
+				if (!name) return;
+				const existing = bag.get(name);
+				bag.set(name, existing ? { ...existing, quantity: existing.quantity + 1 } : { name, price, quantity: 1 });
+				renderCart();
+				button.textContent = '✓';
+				window.setTimeout(() => { button.textContent = '+'; }, 700);
+				setCartOpen(true);
+			});
+		});
+
+		cartItems?.addEventListener('click', (event) => {
+			const target = event.target;
+			if (!(target instanceof HTMLElement)) return;
+			const name = target.dataset.name;
+			if (!name) return;
+			const item = bag.get(name);
+			if (!item) return;
+			if (target.dataset.action === 'increase') item.quantity += 1;
+			if (target.dataset.action === 'decrease') item.quantity -= 1;
+			if (item.quantity <= 0) bag.delete(name);
+			renderCart();
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (event.key !== 'Escape') return;
+			if (cartPanel?.classList.contains('open')) {
+				setCartOpen(false);
+				cartButton?.focus();
+				return;
+			}
+			if (navLinks?.classList.contains('open')) {
+				navLinks.classList.remove('open');
+				menuToggle?.setAttribute('aria-expanded', 'false');
+				menuToggle?.focus();
+			}
+		});
+	</script>
+</BaseLayout>
