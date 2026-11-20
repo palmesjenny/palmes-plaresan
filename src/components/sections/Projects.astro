@@ -1,0 +1,52 @@
+<section class="projects" id="projects">
+	<div class="heading">
+		<div class="label"><span>03</span><p>Selected work</p></div>
+		<h2>Projects with purpose.</h2>
+	</div>
+	<div class="grid">
+		<article>
+			<a class="project-link" href="#quick-bites" aria-label="View Quick Bites project">
+				<div class="visual visual-quick-bites" id="quick-bites">
+					<div class="quick-bites-logo">
+						<span class="bowl" aria-hidden="true"></span>
+						<strong>Quick Bites</strong>
+						<small>Fresh. Fast. Flavorful.</small>
+					</div>
+				</div>
+				<div class="meta">
+					<h3>Quick Bites</h3>
+					<p>Branding · Website</p>
+				</div>
+			</a>
+		</article>
+		<article><div class="visual visual-two"><span>Nook</span></div><div class="meta"><h3>Nook Living</h3><p>Strategy · E-commerce</p></div></article>
+		<article><div class="visual visual-three"><span>M/24</span></div><div class="meta"><h3>Monument Journal</h3><p>Editorial · Digital</p></div></article>
+	</div>
+</section>
+
+<style>
+	.projects { padding:100px clamp(24px,7vw,108px);background:#ebece5 }
+	.heading { display:grid;grid-template-columns:180px 1fr;align-items:end;margin-bottom:58px }
+	.label { display:flex;align-items:center;gap:16px }.label span{color:#a97932;font-size:12px}.label p{margin:0;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+	h2 { margin:0;font-family:Georgia,serif;font-size:clamp(44px,5vw,68px);font-weight:500;letter-spacing:-.04em }
+	.grid { display:grid;grid-template-columns:repeat(3,1fr);gap:22px } article{min-width:0}
+	.visual { height:390px;display:grid;place-items:center;border-radius:4px;overflow:hidden }.visual span{font-family:Georgia,serif}
+	.project-link { display:block;color:inherit;text-decoration:none }
+	.project-link .visual { transition:transform .25s ease, box-shadow .25s ease }
+	.project-link:hover .visual { transform:translateY(-4px);box-shadow:0 18px 35px rgba(23,32,42,.12) }
+	.project-link:focus-visible { outline:3px solid #17202a;outline-offset:6px;border-radius:4px }
+	.visual-quick-bites { position:relative;background:#ef6b42;color:#fff8e9 }
+	.visual-quick-bites::before,
+	.visual-quick-bites::after { content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,248,233,.42) }
+	.visual-quick-bites::before { width:260px;height:260px }
+	.visual-quick-bites::after { width:330px;height:330px }
+	.quick-bites-logo { position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;font-family:Georgia,serif;text-align:center }
+	.quick-bites-logo strong { margin-top:14px;font-size:clamp(40px,4vw,58px);font-weight:700;line-height:1 }
+	.quick-bites-logo small { margin-top:12px;font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase }
+	.bowl { position:relative;width:72px;height:38px;border:5px solid #fff8e9;border-top:0;border-radius:8px 8px 42px 42px }
+	.bowl::before { content:"";position:absolute;width:80px;height:5px;margin:-5px 0 0 -9px;border-radius:999px;background:#fff8e9 }
+	.visual-two{background:#7d8a78;color:#edf0e7;font-size:58px}.visual-three{background:#313a43;color:#e7c981;font-size:64px}
+	.meta { display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:16px }.meta h3{margin:0;font-family:Georgia,serif;font-size:20px}.meta p{margin:0;color:#747c7b;font-size:13px}
+	@media (max-width:900px){.grid{grid-template-columns:1fr;gap:38px}.visual{height:420px}}
+	@media (max-width:700px){.projects{padding-block:72px}.heading{grid-template-columns:1fr;gap:30px}.visual{height:330px}}
+</style>
