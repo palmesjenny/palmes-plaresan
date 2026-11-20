@@ -120,12 +120,11 @@ import '../scripts/animations.js';
 		<section class="about-section" id="about" data-reveal>
 			<div class="container about-grid">
 				<div class="about-visual" aria-label="Fresh ingredients being prepared">
+					<img src="/images/harvest-bowl.jpg" alt="Fresh bowl prepared in the Quick Bites kitchen" />
 					<div class="counter-card">
 						<span>Fresh daily</span>
 						<strong>Made with care</strong>
 					</div>
-					<div class="plate plate-one"></div>
-					<div class="plate plate-two"></div>
 				</div>
 				<div class="about-copy">
 					<p class="section-kicker">Our kitchen</p>
@@ -194,8 +193,8 @@ import '../scripts/animations.js';
 	<div class="cart-backdrop" aria-hidden="true"></div>
 
 	<script>
-		const menuToggle = document.querySelector('.menu-toggle');
-		const navLinks = document.querySelector('.nav-links');
+		const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+		const navLinks = document.querySelector<HTMLElement>('.nav-links');
 		menuToggle?.addEventListener('click', () => {
 			const open = menuToggle.getAttribute('aria-expanded') === 'true';
 			menuToggle.setAttribute('aria-expanded', String(!open));
@@ -209,18 +208,18 @@ import '../scripts/animations.js';
 			});
 		});
 
-		const cartButton = document.querySelector('.cart-button');
-		const cartPanel = document.querySelector('.cart-panel');
-		const cartBackdrop = document.querySelector('.cart-backdrop');
-		const cartClose = document.querySelector('.cart-close');
-		const cartItems = document.querySelector('.cart-items');
-		const cartCount = document.querySelector('.cart-count');
-		const cartTotal = document.querySelector('.cart-total');
-		const checkoutButton = document.querySelector('.checkout-button');
-		const checkoutStatus = document.querySelector('.checkout-status');
+		const cartButton = document.querySelector<HTMLButtonElement>('.cart-button');
+		const cartPanel = document.querySelector<HTMLElement>('.cart-panel');
+		const cartBackdrop = document.querySelector<HTMLElement>('.cart-backdrop');
+		const cartClose = document.querySelector<HTMLButtonElement>('.cart-close');
+		const cartItems = document.querySelector<HTMLElement>('.cart-items');
+		const cartCount = document.querySelector<HTMLElement>('.cart-count');
+		const cartTotal = document.querySelector<HTMLElement>('.cart-total');
+		const checkoutButton = document.querySelector<HTMLButtonElement>('.checkout-button');
+		const checkoutStatus = document.querySelector<HTMLElement>('.checkout-status');
 		const bag = new Map();
 
-		const setCartOpen = (open) => {
+		const setCartOpen = (open: boolean) => {
 			cartPanel?.classList.toggle('open', open);
 			cartBackdrop?.classList.toggle('open', open);
 			cartPanel?.setAttribute('aria-hidden', String(!open));
@@ -268,7 +267,7 @@ import '../scripts/animations.js';
 			`).join('');
 		};
 
-		document.querySelectorAll('.add-button').forEach((button) => {
+		document.querySelectorAll<HTMLButtonElement>('.add-button').forEach((button) => {
 			button.addEventListener('click', () => {
 				const name = button.dataset.name;
 				const price = Number(button.dataset.price);
