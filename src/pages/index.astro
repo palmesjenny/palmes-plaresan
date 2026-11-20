@@ -84,7 +84,7 @@ import '../scripts/animations.js';
 							<div><p class="category">Signature bowl</p><h3>Harvest Power Bowl</h3></div>
 							<p class="description">Roasted vegetables, herb rice, avocado, and lemon tahini.</p>
 							<div class="menu-card-footer">
-								<strong>$14.50</strong>
+								<strong>₱100.50</strong>
 								<button class="add-button" type="button" data-name="Harvest Power Bowl" data-price="14.50" aria-label="Add Harvest Power Bowl to bag">+</button>
 							</div>
 						</div>
@@ -96,7 +96,7 @@ import '../scripts/animations.js';
 							<div><p class="category">Stacked favorite</p><h3>Firehouse Burger</h3></div>
 							<p class="description">Smash patty, smoked cheddar, house sauce, and crisp slaw.</p>
 							<div class="menu-card-footer">
-								<strong>$12.90</strong>
+								<strong>₱99.00</strong>
 								<button class="add-button" type="button" data-name="Firehouse Burger" data-price="12.90" aria-label="Add Firehouse Burger to bag">+</button>
 							</div>
 						</div>
@@ -108,7 +108,7 @@ import '../scripts/animations.js';
 							<div><p class="category">Comfort classic</p><h3>Rosy Tomato Pasta</h3></div>
 							<p class="description">Silky tomato sauce, fresh basil, parmesan, and chili crunch.</p>
 							<div class="menu-card-footer">
-								<strong>$13.75</strong>
+								<strong>₱99.00</strong>
 								<button class="add-button" type="button" data-name="Rosy Tomato Pasta" data-price="13.75" aria-label="Add Rosy Tomato Pasta to bag">+</button>
 							</div>
 						</div>
@@ -185,7 +185,7 @@ import '../scripts/animations.js';
 			<p class="cart-empty">Your bag is waiting for something delicious.</p>
 		</div>
 		<div class="cart-footer">
-			<div><span>Subtotal</span><strong class="cart-total">$0.00</strong></div>
+			<div><span>Subtotal</span><strong class="cart-total">₱0.00</strong></div>
 			<button class="button button-primary checkout-button" type="button" disabled>Checkout</button>
 			<p class="checkout-status" role="status" aria-live="polite"></p>
 		</div>
@@ -244,7 +244,7 @@ import '../scripts/animations.js';
 			const count = entries.reduce((sum, item) => sum + item.quantity, 0);
 			const total = entries.reduce((sum, item) => sum + item.price * item.quantity, 0);
 			cartCount.textContent = String(count);
-			cartTotal.textContent = `$${total.toFixed(2)}`;
+			cartTotal.textContent = `₱${total.toFixed(2)}`;
 			if (checkoutButton instanceof HTMLButtonElement) {
 				checkoutButton.disabled = entries.length === 0;
 			}
@@ -257,7 +257,7 @@ import '../scripts/animations.js';
 
 			cartItems.innerHTML = entries.map((item) => `
 				<div class="cart-item">
-					<div><strong>${item.name}</strong><span>$${item.price.toFixed(2)}</span></div>
+					<div><strong>${item.name}</strong><span>₱${item.price.toFixed(2)}</span></div>
 					<div class="quantity" aria-label="Quantity for ${item.name}">
 						<button type="button" data-action="decrease" data-name="${item.name}" aria-label="Decrease ${item.name} quantity">−</button>
 						<span>${item.quantity}</span>
